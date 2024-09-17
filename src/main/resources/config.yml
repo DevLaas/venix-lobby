@@ -1,0 +1,165 @@
+# VENIX-LOBBY
+# Desenvolvido por: Laas
+# Contato (discord): devlaas
+# Patch: v1.0
+#
+# Dependências:
+# LuckPerms e PlaceholderAPI (v2.10.5)
+#
+# %player%" = Jogador.
+# %server%" = Servidor.
+# %group%" = Grupo.
+# %bungee_total%" = Players.
+#
+# Placeholders em uso:
+# /papi ecloud download Bungee
+#
+# Use /papi reload para recarregar as extensões do placeholder.
+#
+# O sistema é totalmente compartível com PlaceholderAPI.
+# Permissão para setar o lobby: [ venixlobby.setlobby ]
+# Permissão para habilitar o modo construtor: [ venixlobby.buildermode ]
+
+
+configuration:
+  #======================================================#
+  #                      SCOREBOARD                      #
+  #======================================================#
+  scoreboard:
+    title: # O título da scoreboard pode ser animado seguindo padrão abaixo.
+      - "&6&lLOBBY"
+      - "&6&lLOBBY"
+      - "&6&lLOBBY"
+      - "&6&lLOBBY"
+      - "&6&lLOBBY"
+      - ""
+      - "&f&lLOBBY"
+      - "&f&lLOBBY"
+      - "&f&lLOBBY"
+      - "&f&lLOBBY"
+      - "&f&lLOBBY"
+      - ""
+      - "&6&lLOBBY"
+      - "&6&lLOBBY"
+      - "&6&lLOBBY"
+      - "&6&lLOBBY"
+      - "&6&lLOBBY"
+      - ""
+      - "&f&lLOBBY"
+      - "&f&lLOBBY"
+      - "&f&lLOBBY"
+      - "&f&lLOBBY"
+      - "&f&lLOBBY"
+      - ""
+      - "&6&lVENIX PLUGINS"
+      - "&6&lVENIX PLUGINS"
+      - "&6&lVENIX PLUGINS"
+      - "&6&lVENIX PLUGINS"
+      - "&6&lVENIX PLUGINS"
+      - ""
+      - "&f&lVENIX PLUGINS"
+      - "&f&lVENIX PLUGINS"
+      - "&f&lVENIX PLUGINS"
+      - "&f&lVENIX PLUGINS"
+      - "&f&lVENIX PLUGINS"
+      - ""
+      - "&6&lVENIX PLUGINS"
+      - "&6&lVENIX PLUGINS"
+      - "&6&lVENIX PLUGINS"
+      - "&6&lVENIX PLUGINS"
+      - "&6&lVENIX PLUGINS"
+      - ""
+      - "&f&lVENIX PLUGINS"
+      - "&f&lVENIX PLUGINS"
+      - "&f&lVENIX PLUGINS"
+      - "&f&lVENIX PLUGINS"
+      - "&f&lVENIX PLUGINS"
+    lines: # Corpo da scoreboard (Linhas).
+      - ""
+      - " &fNick: &e%player%"
+      - " &fCargo: %group%"
+      - ""
+      - " &fJogadores: &d%bungee_total%"
+      - ""
+      - "&6&ogithub.com/D&6&oevLaas"
+
+
+  #======================================================#
+  #                  JOIN CONFIGURATION                  #
+  #======================================================#
+  join:
+    # OBSERVAÇÃO:
+    # Se o jogador não possuir prefixo definido no grupo no qual o mesmo ocupa
+    # a mensagem de entrada será enviada com o nome do grupo, não o seu prefixo.
+
+    # Ao efetuar o login no servidor, será enviado uma mensagem de entrada
+    # para os jogadores que possuirem permissão para broadcast.
+    join-message-active: true
+    join-message: "%player% &6conectou-se no lobby."
+    join-permission: "venixlobby.broadcast"
+
+
+  #======================================================#
+  #                       HOTBAR                         #
+  #======================================================#
+  hotbar:
+    # Slots para definir os items da hotbar (entre 0 e 8).
+    # Você também pode definir nomes para os items.
+
+    # (Profile)
+    profile-slot: 3
+    profile-item-name: "&6Perfil"
+
+    # (Modos de jogo)
+    modos-slot: 5
+    modos-item-name: "&6Modos"
+
+
+  #======================================================#
+  #                   CHAT CONFIGURATION                 #
+  #======================================================#
+  chat:
+    # Configure a formatação do chat do seu jeito.
+    chat-format: "%group%%player%&f: &7%message%"
+
+    # Quando o jogador for mencionado no chat será produzio um som.
+    chat-player-notify: true
+    chat-notify-sound: ITEM_PICKUP
+    notify-sound-altura: 0.5
+    notify-sound-pitch: 1.0
+
+
+  #======================================================#
+  #                        PERFIL                        #
+  #======================================================#
+  profile:
+    # OBSERVAÇÃO:
+    # Se o jogador não possuir prefixo definido no grupo no qual o mesmo ocupa
+    # será exibido no perfil o nome do grupo, não o seu prefixo.
+
+    # Quando ocorre um erro ao tentar carregar o sistema.
+    error-luckperms-load: "&cErro ao tentar carregar o sistema."
+
+
+  #======================================================#
+  #                       SERVERS                        #
+  #======================================================#
+  server:
+    # Mensagem ao tentar estabelecer conexão com um servidor.
+    send-server: "&aConectando-se ao servidor: %server%."
+
+    # Quando ocorre um erro ao tentar conectar-se a outro servidor.
+    server-connection-fail: "&cNão foi possível conectar ao servidor."
+
+
+  #======================================================#
+  #                  LOBBY CONFIGURATION                 #
+  #======================================================#
+  lobby:
+    # Configurações da localização do lobby.
+    command-permission: "&cVocê não tem permissão para utilizar esse comando."
+    setlobby-success: "&aA localização do lobby foi setada com sucesso."
+
+    # Modo construtor.
+    lobby-buildermode-on: "&aModo construtor ativado."
+    lobby-buildermode-off: "&cModo construtor desativado."

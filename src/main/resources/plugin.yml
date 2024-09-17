@@ -1,0 +1,10 @@
+name: venix-lobby
+author: Laas
+version: 1.0
+description: Plugin para seu servidor lobby.
+depend: [LuckPerms, PlaceholderAPI]
+
+main: lobby.venixteam.laas.Main
+commands:
+  build:
+  setlobby:

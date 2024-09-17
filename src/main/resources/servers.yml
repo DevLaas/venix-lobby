@@ -1,0 +1,43 @@
+servers:
+  lobby:
+    icon: NETHER_STAR # Icone do item
+    name: "&6&lLOBBY"
+    desc: "&e&nVoltar para o lobby principal!"
+    max-players: 100
+    slot: 10
+    proxy-connect-server:
+      - '127.0.0.1:25565 ; lobby'
+  skywars:
+    icon: EYE_OF_ENDER # Icone do item
+    name: "&6&lSKY WARS"
+    desc: "&e&nClique para se conectar!"
+    max-players: 100
+    slot: 12
+    proxy-connect-server:
+      - '127.0.0.1:25566 ; skywars'
+  bedwars:
+    icon: BED # Icone do item
+    name: "&6&lBED WARS"
+    desc: "&e&nClique para se conectar!"
+    max-players: 100
+    slot: 13
+    proxy-connect-server:
+      - '127.0.0.1:25567 ; bedwars'
+  hg:
+    icon: MUSHROOM_SOUP # Icone do item
+    name: "&6&lHG"
+    desc: "&e&nClique para se conectar!"
+    max-players: 100
+    slot: 14
+    proxy-connect-server:
+      - '127.0.0.1:25568 ; hg'
+  gladiator:
+    icon: 101 # Icone do item
+    name: "&6&lGLADIATOR"
+    desc: "&e&nClique para se conectar!"
+    max-players: 100
+    slot: 15
+    proxy-connect-server:
+      - '127.0.0.1:25569 ; gladiator'
+
+  # Aqui você seguir essa ordem para configurar o resto
