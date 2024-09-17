@@ -1,32 +1,31 @@
-# Venix Group Plugin
+# Venix Lobby Plugin
 
-O **Venix Group Plugin** é um plugin para Minecraft desenvolvido para facilitar o gerenciamento de grupos e permissões utilizando a API do LuckPerms. Este plugin oferece uma maneira eficiente e personalizada de gerenciar permissões e status de jogadores em seu servidor Minecraft.
+O **Venix Lobby Plugin** é um plugin para Minecraft desenvolvido para deixar seu lobby mais legal, utilizando a API do LuckPerms e PlaceholderAPI. 
 
 ## Funcionalidades
 
-- **Gerenciamento de Grupos**: Adicione e remova grupos de jogadores com comandos simples.
-- **Compatibilidade**: Funciona com a API do LuckPerms para uma integração completa com o sistema de permissões do servidor.
+- **Gerenciamento da Localização do Lobby**: Defina e salve a localização do lobby para facilitar o spawn dos jogadores.
+- **Modo de Construção**: Ative um modo de construção para facilitar a edição de áreas no lobby.
+- **Manipule seus grupos**: Utilizando a API do luckperms, o sistema manipula o prefixo dos seus cargos.
+- **Compatibilidade**: Integra-se com LuckPerms para gerenciar permissões e com PlaceholderAPI para placeholders.
 
 ## Comandos
 
-- `/group <adicionar/remover> <player> <group>`: Adiciona ou remove um grupo de um jogador.
-  - **Adicionar**: Concede o grupo ao jogador e pode ativar efeitos VIP.
-  - **Remover**: Remove o grupo do jogador.
+  - `/setlobby`: Adiciona ou remove um grupo de um jogador.
+  - **Permissão**: venixlobby.setlobby.
 
-### Exemplos de Uso
-
-- Para adicionar o grupo `vip` a um jogador chamado `Steve`, use: `/group adicionar Steve vip`
-- Para remover o grupo `mod` de um jogador chamado `Alex`, use: `/group remover Alex mod`
-
+  - `/build`: Adiciona ou remove um grupo de um jogador.
+  - **Permissão**: venixlobby.buildermode.
 
 ## Configuração
 
-1. **Configuração de VIPs**: Configure quais grupos são considerados VIPs e ajuste os títulos e arquivo de configuração.
+1. **Configuração do sistema**: O sistema foi feito para ficar do seu gosto, logo, configurável.
 
 ## Dependências
 
 - **Spigot API**: `1.8.8-R0.1-SNAPSHOT`
 - **LuckPerms API**: `5.4`
+- **PlaceholderAPI**: `2.10.5` (Para compatibilidade com placeholders)!
 
 ## Instalação
 
