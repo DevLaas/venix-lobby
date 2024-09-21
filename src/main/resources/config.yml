@@ -85,8 +85,18 @@ configuration:
 
 
   #======================================================#
-  #                  JOIN CONFIGURATION                  #
+  #                      SCOREBOARD                      #
   #======================================================#
+  tablist:
+    # Configure seu tablist da forma que você desejar.
+    tab-join-active: true
+    tab-header: "\n &6&lVENIX PLUGINS\n   &eEstamos atualmente com &f%bungee_total%&e, online!\n \n"
+    tab-footer: "\n \n&6&ogithub.com/D&6&oevLaas\n"
+
+
+  #======================================================#
+  #                  JOIN CONFIGURATION                  #
+  #======================================================#e
   join:
     # OBSERVAÇÃO:
     # Se o jogador não possuir prefixo definido no grupo no qual o mesmo ocupa
@@ -97,6 +107,10 @@ configuration:
     join-message-active: true
     join-message: "%player% &6conectou-se no lobby."
     join-permission: "venixlobby.broadcast"
+
+    join-title-active: true
+    join-title: "&6&lVENIX PLUGINS"
+    join-subtitle: "&fBem-vindo!"
 
 
   #======================================================#
@@ -147,6 +161,7 @@ configuration:
   server:
     # Mensagem ao tentar estabelecer conexão com um servidor.
     send-server: "&aConectando-se ao servidor: %server%."
+    send-actionbar-server: "&aVocê está sendo enviado para o servidor: %server%."
 
     # Quando ocorre um erro ao tentar conectar-se a outro servidor.
     server-connection-fail: "&cNão foi possível conectar ao servidor."

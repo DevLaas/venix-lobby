@@ -1,7 +1,7 @@
 package lobby.venixteam.laas.cmd.lobby;
 
 import lobby.venixteam.laas.Main;
-import lobby.venixteam.laas.utils.LobbyLocation;
+import lobby.venixteam.laas.utils.lobby.LobbySetter;
 import org.bukkit.Location;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -9,6 +9,8 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 public class SetLobbyCommand implements CommandExecutor {
+
+    private LobbySetter lobbyConfig = new LobbySetter();
 
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
@@ -28,7 +30,7 @@ public class SetLobbyCommand implements CommandExecutor {
             Location location = player.getLocation();
             location.setYaw(player.getLocation().getYaw());
             location.setPitch(player.getLocation().getPitch());
-            LobbyLocation.setLobby(location);
+            lobbyConfig.setLobbyLocation(location);
             player.sendMessage(Main.getInstance().getConfig().getString("configuration.lobby.setlobby-success").replace("&", "§"));
             return true;
         }

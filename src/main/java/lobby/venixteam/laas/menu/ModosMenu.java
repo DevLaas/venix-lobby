@@ -2,8 +2,10 @@ package lobby.venixteam.laas.menu;
 
 import lobby.venixteam.laas.Main;
 import lobby.venixteam.laas.utils.items.ItemBuilder;
+import lobby.venixteam.laas.utils.lobby.ServersConfiguration;
 import lobby.venixteam.laas.utils.menu.PlayerMenu;
 import lobby.venixteam.laas.utils.BungeeUtil;
+import lobby.venixteam.laas.utils.titles.TitlesAPI;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.Sound;
@@ -20,23 +22,20 @@ import java.util.Map;
 
 public class ModosMenu extends PlayerMenu {
 
-    private final FileConfiguration config;
+    private ServersConfiguration config;
 
     public ModosMenu(Player player) {
         super(player, "Menu de Modos", 3);
-        this.config = Main.getInstance().getServersConfig();
+        config = Main.getInstance().getServersConfig();
 
-        if (this.config == null || !this.config.isConfigurationSection("servers")) {
-            player.sendMessage("§cConfiguração de servidores não encontrada.");
-            return;
-        }
-
-        for (String key : config.getConfigurationSection("servers").getKeys(false)) {
-            Map<String, Object> serverConfig = config.getConfigurationSection("servers." + key).getValues(true);
+        for (String key : config.getServersConfig().getConfigurationSection("servers").getKeys(false)) {
+            FileConfiguration serversConfig = config.getServersConfig();
+            Map<String, Object> serverConfig = serversConfig.getConfigurationSection("servers." + key).getValues(false);
             Object iconObject = serverConfig.get("icon");
             String name = ChatColor.translateAlternateColorCodes('&', (String) serverConfig.get("name"));
             String desc = ChatColor.translateAlternateColorCodes('&', (String) serverConfig.get("desc"));
             int slot = (int) serverConfig.get("slot");
+
 
             Material material = getMaterialFromObject(iconObject);
             if (material == null) {
@@ -57,7 +56,6 @@ public class ModosMenu extends PlayerMenu {
                 .build();
 
         this.setItem(26, closeInv);
-
         this.open();
         this.register(Main.getInstance());
     }
@@ -76,13 +74,14 @@ public class ModosMenu extends PlayerMenu {
                         player.closeInventory();
                         player.playSound(player.getLocation(), Sound.NOTE_PLING, 0.5f, 0.2f);
                     } else {
-                        for (String key : config.getConfigurationSection("servers").getKeys(false)) {
-                            Map<String, Object> serverConfig = config.getConfigurationSection("servers." + key).getValues(true);
+                        for (String key : config.getServersConfig().getConfigurationSection("servers").getKeys(false)) {
+                            Map<String, Object> serverConfig = config.getServersConfig().getConfigurationSection("servers." + key).getValues(false);
                             int serverSlot = (int) serverConfig.get("slot");
                             if (serverSlot == slot) {
                                 String serverName = (String) serverConfig.get("name");
                                 player.sendMessage(Main.getInstance().getConfig().getString("configuration.server.send-server").replace("%server%", key).replace("&", "§"));
                                 BungeeUtil.connectToServer(player, key);
+                                TitlesAPI.sendActionBar(player, Main.getInstance().getConfig().getString("configuration.server.send-actionbar-server").replace("%server%", key).replace("&", "§"));
                                 break;
                             }
                         }
