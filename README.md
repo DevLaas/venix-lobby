@@ -11,10 +11,10 @@ O **Venix Lobby Plugin** é um plugin para Minecraft desenvolvido para deixar se
 
 ## Comandos
 
-  - `/setlobby`: Adiciona ou remove um grupo de um jogador.
+  - `/setlobby`: Define a localização do lobbt.
   - **Permissão**: venixlobby.setlobby.
 
-  - `/build`: Adiciona ou remove um grupo de um jogador.
+  - `/build`: Ativa e desativa o modo de construtor.
   - **Permissão**: venixlobby.buildermode.
 
 ## Configuração
